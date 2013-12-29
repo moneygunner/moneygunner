@@ -1,0 +1,48 @@
+        {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="light"><i class="icon-chevron-left"></i></button></a>
+          {% else %}
+            <span><button class="light"><i class="icon-chevron-left"></i></button></span>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <em><button>{{ page }}</button></em>
+            {% elsif page == 1 %}
+              <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}"><button class="light">{{ page }}</button></a>
+            {% else %}
+              <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"><button class="light">{{ page }}</button></a>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="light"><i class="icon-chevron-right"></i></button></a>
+          {% else %}
+            <span><button class="light"><i class="icon-chevron-right"></i></button></span>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <footer>
+            <div class="slate">
+
+                <div class="eight columns">
+                    <h5>Footer widget</h5>
+                    <p>A tiny little widget for a small message for your visitors. You could include social links or an email address for example. It's completely up to you.</p>
+                    <a href="#"><button class="facebook"><i class="icon-facebook"></i></button></a>
+                    <a href="#"><button class="twitter"><i class="icon-twitter"></i></button></a>
+                    <a href="#"><button class="linkedin"><i class="icon-linkedin"></i></button></a>
+                    <a href="#"><button class="google_plus"><i class="icon-google-plus"></i></button></a>
+                    <a href="#"><button class="pinterest"><i class="icon-pinterest"></i></button></a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="/js/jquery.fitvids.js"></script>
+        <script src="/js/respond.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

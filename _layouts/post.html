@@ -1,9 +1,19 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<section>
+    <div class="eight columns">
+        <h4 class="post_title">{{ page.title }}</a></h4>
+        <a href="archive.html"><span class="post_date">{{ page.date | date_to_string }}</span></a>
 
-<div class="post">
-{{ content }}
-</div>
+        {{ page.content }}
+
+        <div class="metadata">
+            <span><i class="icon-pencil"></i><a href="archive.html">Stephen Brown</a></span>
+            <span><i class="icon-time"></i><a href="archive.html">December 26, 2012</a></span>
+            <span><i class="icon-list"></i><a href="archive.html">Technology</a></span>
+        </div>
+    
+    </div>
+    <br class="clear">
+</section>
